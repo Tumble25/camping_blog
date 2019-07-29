@@ -1,8 +1,16 @@
 .card-interview {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 5%;
+}
+
+.card-interview:hover{
+  border-style: solid;
+  border-color: #75A21E;
+  h2{
+    color: #75A21E;
+    }
 }
 
 .card-interview img {

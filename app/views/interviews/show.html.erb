@@ -1,0 +1,21 @@
+<div class="general-container">
+<div class="interview">
+
+<h1><%= @interview.title  %></h1>
+<h3>Interview with <%= @interview.first_name %> <%= @interview.last_name %> from <%= @interview.camping %></h3>
+<p><%= @interview.content  %></p>
+</div>
+<%= link_to "Edit", edit_interview_path(@interview) %>
+<%= link_to "Delete", interview_path(@interview),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<%= link_to "Add comment", new_interview_comment_path(@interview) %>
+
+
+
+
+<% @interview.comments.each do |comment| %>
+  <%= comment.content %>
+  <%= current_user.email %>
+<% end %>
+</div>

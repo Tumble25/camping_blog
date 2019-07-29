@@ -1,0 +1,23 @@
+<div class="general-container">
+
+  <% @interviews.each do |interview| %>
+  <%= link_to interview_path(interview) do %>
+  <div class="card-interview">
+    <img src="https://r-cf.bstatic.com/images/hotel/max1280x900/131/131656046.jpg" />
+    <div class="card-interview-infos">
+      <div>
+        <h2><%= interview.title  %></h2>
+        <p>Interview with <%= interview.first_name %> <%= interview.last_name %> from <%= interview.camping %></p>
+        <% if current_user.present? %>
+        <%= link_to "Edit", edit_interview_path(interview) %>
+        <%= link_to "Delete", interview_path(interview),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+  <% end %>
+</div>

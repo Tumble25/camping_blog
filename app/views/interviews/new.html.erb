@@ -1,0 +1,12 @@
+
+<h2>Create a new interview</h2>
+<%= simple_form_for([@interview]) do |f| %>
+  <%= f.input :camping %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.button :submit, class: "new-reservations-btn"%>
+<% end %>
+
+

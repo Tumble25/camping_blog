@@ -15,7 +15,7 @@
       <% end %>
   <%# link_to "Add comment", new_interview_comment_path(@interview) %>
   <%= simple_form_for [@interview, @comment] do |f| %>
-    <%= f.input :content, placeholder: 'Wil je reageren, plaats hier je reactie.', label: false %>
+    <%= f.input :content, placeholder: 'Plaats hier je reactie.', label: false %>
     <%= f.submit "Plaats reactie", class: "btn btn-comment" %>
   <% end %>
 

@@ -3,7 +3,7 @@
 
 <h1><%= @interview.title  %></h1>
 <h3>Interview with <%= @interview.first_name %> <%= @interview.last_name %> from <%= @interview.camping %></h3>
-<p><%= @interview.content  %></p>
+<p><%= sanitize @interview.content  %></p>
 </div>
 <%= link_to "Edit", edit_interview_path(@interview) %>
 <%= link_to "Delete", interview_path(@interview),

@@ -1,21 +1,31 @@
 <div class="general-container">
-<div class="interview">
+  <div class="interview">
 
-<h1><%= @interview.title  %></h1>
-<h3>Interview with <%= @interview.first_name %> <%= @interview.last_name %> from <%= @interview.camping %></h3>
-<p><%= sanitize @interview.content  %></p>
-</div>
-<%= link_to "Edit", edit_interview_path(@interview) %>
-<%= link_to "Delete", interview_path(@interview),
+    <h1><%= @interview.title %></h1>
+    <h3>Interview with <%= @interview.first_name %> <%= @interview.last_name %> from <%= @interview.camping %></h3>
+    <p><%= sanitize @interview.content  %></p>
+  </div>
+
+  <div class="comments-box">
+  <% if current_user.present? %>
+    <%= link_to "Edit", edit_interview_path(@interview) %>
+    <%= link_to "Delete", interview_path(@interview),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
-<%= link_to "Add comment", new_interview_comment_path(@interview) %>
+      <% end %>
+  <%# link_to "Add comment", new_interview_comment_path(@interview) %>
+  <%= simple_form_for [@interview, @comment] do |f| %>
+    <%= f.input :content, placeholder: 'Wil je reageren, plaats hier je reactie.', label: false %>
+    <%= f.submit "Plaats reactie", class: "btn btn-comment" %>
+  <% end %>
 
-
-
-
-<% @interview.comments.each do |comment| %>
-  <%= comment.content %>
-  <%= current_user.email %>
-<% end %>
+  <div class="all-comments">
+  <% @interview.comments.reverse_each do |comment| %>
+  <div class="comment">
+    <i> <b> <%= current_user.email %></b></i>
+    <p><%= comment.content %></p>
+  </div>
+  <% end %>
+</div>
+</div>
 </div>

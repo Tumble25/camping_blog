@@ -4,6 +4,6 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :title %>
-  <%= f.input :content %>
+  <%= f.input :content, as: :trix_editor %>
   <%= f.button :submit, class: "new-reservations-btn"%>
 <% end %>

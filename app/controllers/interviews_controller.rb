@@ -7,6 +7,7 @@ class InterviewsController < ApplicationController
 
   def show
     @interview = Interview.find(params[:id])
+    @comment = Comment.new
   end
 
   def new

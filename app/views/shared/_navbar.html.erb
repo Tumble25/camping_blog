@@ -13,14 +13,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <%# Als user ingelogs is --> over ons + user avatar %>
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
         <li class="nav-item">
           <%= link_to "Over ons", "#", class: "nav-link" %>
         </li>
+        <%# Als user ingelogs is --> over ons + user avatar %>
+      <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag "https://avatars3.githubusercontent.com/u/45738061?s=400&u=5e19142c4e3bc218720f9048d0e0c2873a3daf12&v=4", class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

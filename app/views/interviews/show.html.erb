@@ -1,11 +1,18 @@
 <div class="general-container">
   <div class="interview">
 
-    <h1><%= @interview.title %></h1>
-    <h3>Interview with <%= @interview.first_name %> <%= @interview.last_name %> from <%= @interview.camping %></h3>
+    <!-- banner -->
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.anwbcamping.nl/img/camping/24180/d78bd356-34d1-4cb7-93d0-23722f6426f1/Nederland-Stegeren-Camping%20de%20Kleine%20Wolf-ExtraLarge.jpg);">
+  <div class="container">
+        <h1><%= @interview.title %></h1>
+        <p>Interview with <%= @interview.first_name %> <%= @interview.last_name %> from <%= @interview.camping %></p>
+  </div>
+</div>
+    <!-- banner -->
     <p><%= sanitize @interview.content  %></p>
   </div>
 
+<!-- comment -->
   <div class="comments-box">
   <% if current_user.present? %>
     <%= link_to "Edit", edit_interview_path(@interview) %>

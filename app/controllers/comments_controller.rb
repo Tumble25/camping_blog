@@ -9,13 +9,14 @@ class CommentsController < ApplicationController
 
   def create
     @interview = Interview.find(params[:interview_id])
-    # @comment = current_user.comments.build(comment_params)
     @comment = @interview.comments.create(comment_params.merge(user_id: current_user.id))
-    # @comment = Comment.new(comment_params)
-    # we need `interview_id` to asssociate comments with corresponding interview
     @comment.interview = @interview
     @comment.save
     redirect_to interview_path(@interview)
+  end
+
+  def after_sign_in_path_for(resource_or_scope)
+    stored_location_for(resource_or_scope) || super
   end
 
   private

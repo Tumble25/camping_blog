@@ -14,7 +14,7 @@
 
 <!-- comment -->
   <div class="comments-box">
-  <% if current_user.present? && current_user.admin? %>
+  <% if current_user.present? && current_user.user? %>
     <%= link_to "Edit", edit_interview_path(@interview) %>
     <%= link_to "Delete", interview_path(@interview),
       method: :delete,

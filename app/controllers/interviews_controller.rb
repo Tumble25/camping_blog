@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :edit, :update ]
 
   def index
     @interviews = Interview.all

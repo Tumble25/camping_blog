@@ -7,18 +7,31 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name,
+                label: "Voornaam",
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Voornaam" }%>
+    <%= f.input :last_name,
+                label: "Achternaam",
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Achternaam" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
+                label: "Wachtwoord",
                 required: true,
                 hint: ("Minimaal #{@minimum_password_length} karakters " if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                label: "Bevestiging wachtwoord",
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :picture %>
+    <%= f.input :picture,
+                label: "Upload uw profielfoto" %>
     <%= f.input :picture_cache, as: :hidden %>
 
   </div>

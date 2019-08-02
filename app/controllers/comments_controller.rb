@@ -19,6 +19,16 @@ class CommentsController < ApplicationController
     stored_location_for(resource_or_scope) || super
   end
 
+  def destroy
+    # @comment = Comment.find(params[:id])
+    # @comment.destroy
+
+    @interviwe = Interview.find(params[:interview_id])
+    @comment = @interview.comments.find(params[:id])
+    @comment.destroy
+    redirect_to interview_path(@interview)
+  end
+
   private
 
   def set_interview

@@ -10,16 +10,17 @@
 </div>
     <!-- banner -->
     <p><%= sanitize @interview.content  %></p>
-  </div>
-
-<!-- comment -->
-  <div class="comments-box">
-  <% if current_user.present? && current_user.user? %>
+    <% if current_user.present? && current_user.admin? %>
     <%= link_to "Edit", edit_interview_path(@interview) %>
     <%= link_to "Delete", interview_path(@interview),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
       <% end %>
+  </div>
+
+
+<!-- comment -->
+  <div class="comments-box">
   <%# link_to "Add comment", new_interview_comment_path(@interview) %>
   <%= simple_form_for [@interview, @comment] do |f| %>
     <%= f.input :content, placeholder: 'Plaats hier je reactie.', label: false %>
@@ -31,6 +32,12 @@
   <div class="comment">
     <i><b><%=comment.user.first_name unless comment.user.blank?%></b></i> <i><b><%=comment.user.last_name unless comment.user.blank?%></b></i>
     <p><%= comment.content %></p>
+    <% if current_user.present? && current_user.admin? %>
+    <%= link_to 'Delete',
+                 interview_comment_path(@interview, comment),
+                             method: :delete,
+                             data: { confirm: 'Are you sure?' } %>
+    <% end %>
   </div>
   <% end %>
 </div>

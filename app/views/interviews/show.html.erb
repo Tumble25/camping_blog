@@ -29,7 +29,7 @@
   <div class="all-comments">
   <% @interview.comments.reverse_each do |comment| %>
   <div class="comment">
-    <i><b><%=comment.user.email unless comment.user.blank?%></b></i>
+    <i><b><%=comment.user.first_name unless comment.user.blank?%></b></i> <i><b><%=comment.user.last_name unless comment.user.blank?%></b></i>
     <p><%= comment.content %></p>
   </div>
   <% end %>

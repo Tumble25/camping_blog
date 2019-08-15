@@ -23,18 +23,19 @@
 
 .green-banner{
   background-color: #bad08e;
-  height: 150px;
+  height: auto;
   color: white;
   text-align: center;
   padding: auto;
   background-size: cover;
   background-position: center;
-  padding: 40px 0;
+  padding: 10px 0;
   h1{
     font-size: 32px;
   }
   p{
     font-size: 22px;
+    margin: 0;
   }
 }
 

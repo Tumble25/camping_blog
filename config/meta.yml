@@ -1,0 +1,5 @@
+meta_product_name: "Product Name"
+meta_title: "CampingInterview - Interviews met campinghouders voor campinghouders"
+meta_description: "De mooiste interviews met campinghouders in de BeNeLux"
+meta_image: "camping.jpg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

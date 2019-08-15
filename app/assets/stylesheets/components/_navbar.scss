@@ -17,3 +17,11 @@
 .navbar-blog .navbar-brand img {
   width: 40px;
 }
+
+.nav-right{
+  display: flex;
+}
+
+.nav-item{
+ justify-content: space-between;
+}

@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   # before the location can be stored.
   before_action :authenticate_user!
 
+  def default_url_options
+  { host: ENV["https://agile-plains-84790.herokuapp.com/"] || "localhost:3000" }
+  end
+
   private
 
     # Its important that the location is NOT stored if:

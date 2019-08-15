@@ -37,3 +37,20 @@
     font-size: 22px;
   }
 }
+
+@media(max-width: 768px) {
+  .green-banner {
+  padding: 6% 5% 3% 5%;
+  height: auto;
+  h1{
+    font-size: 26px;
+  }
+  p{
+    font-size:19px;
+    margin: 0;
+  }
+}
+.banner{
+  padding: 10% 0;
+}
+}

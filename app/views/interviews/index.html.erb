@@ -8,7 +8,8 @@
   <% @interviews.reverse_each do |interview| %>
   <%= link_to interview_path(interview) do %>
   <div class="card-interview">
-    <img src="https://media.anwbcamping.nl/img/camping/24180/d78bd356-34d1-4cb7-93d0-23722f6426f1/Nederland-Stegeren-Camping%20de%20Kleine%20Wolf-ExtraLarge.jpg" />
+    <%= cl_image_tag interview.picture%>
+    <!-- <img src="https://media.anwbcamping.nl/img/camping/24180/d78bd356-34d1-4cb7-93d0-23722f6426f1/Nederland-Stegeren-Camping%20de%20Kleine%20Wolf-ExtraLarge.jpg" /> -->
     <div class="card-interview-infos">
       <div>
         <h2><%= interview.title  %></h2>

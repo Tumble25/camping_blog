@@ -43,6 +43,6 @@ class InterviewsController < ApplicationController
   def interview_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:interview).permit(:camping, :title, :content, :first_name, :last_name)
+    params.require(:interview).permit(:picture, :camping, :title, :content, :first_name, :last_name)
   end
 end

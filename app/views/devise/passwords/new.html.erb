@@ -1,4 +1,11 @@
-<h2>Forgot your password?</h2>
+<div class="green-banner">
+    <h1><i>"De beste interviews met campinghouders in de BeNeLux"</i></h1>
+    <p><i>Een simpele website zonder poespas, maar mét <b>echte</b> verhalen over <b>echte</b> mensen.</i></p>
+</div>
+<div class="general-container">
+  <div class="interview">
+
+<h2>Wachtwoord vergeten?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -11,8 +18,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions", class: "btn camping-btn" %>
+    <%= f.button :submit, "Stuur een email met instructies", class: "btn camping-btn" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
